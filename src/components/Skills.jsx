@@ -73,21 +73,21 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Skill Categories */}
-        <div className="space-y-12 mb-16">
+        {/* Compact Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-gray-100 p-8">
-              <h3 className="text-2xl font-bold text-cyan-500 mb-8 text-center">{category.title}</h3>
-              <div className="space-y-4">
+            <div key={categoryIndex} className="bg-gray-100 p-6">
+              <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">{category.title}</h3>
+              <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="group">
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex justify-between items-center mb-1">
                       <span className="text-sm font-medium text-gray-700">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
+                      <span className="text-xs text-gray-500">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                       <div
-                        className={`h-2.5 rounded-full ${skill.color} transition-all duration-1000 ease-out group-hover:shadow-lg`}
+                        className={`h-2 rounded-full ${skill.color} transition-all duration-1000 ease-out group-hover:shadow-lg`}
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -98,57 +98,72 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Additional Skills */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">Additional Skills</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-            {additionalSkills.map((skill, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 hover:shadow-md transition-all duration-200 cursor-pointer group"
-              >
-                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-200">
-                  {skill.icon}
+        {/* Additional Skills & Awards Combined */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Additional Skills */}
+          <div className="bg-gray-100 p-6">
+            <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">Additional Skills</h3>
+            <div className="grid grid-cols-2 gap-3">
+              {additionalSkills.map((skill, index) => (
+                <div
+                  key={index}
+                  className="flex items-center p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-pointer group"
+                >
+                  <div className="text-xl mr-3 group-hover:scale-110 transition-transform duration-200">
+                    {skill.icon}
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">{skill.name}</span>
                 </div>
-                <span className="text-sm font-medium text-gray-700 text-center">{skill.name}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Certifications or Achievements */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8">Awards & Achievements</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover-lift transition-all duration-200">
-              <div className="text-3xl mb-4">🏆</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Mathematical Modeling</h4>
-              <p className="text-gray-600 text-sm">Third Prize, Guangdong Province, National College Student Mathematical Contest in Modeling, 2023</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover-lift transition-all duration-200">
-              <div className="text-3xl mb-4">💻</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Programming Contest</h4>
-              <p className="text-gray-600 text-sm">Third Class Honor, 4th SUSTech Programming Contest, 2022</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover-lift transition-all duration-200">
-              <div className="text-3xl mb-4">🎓</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Freshman Scholarship</h4>
-              <p className="text-gray-600 text-sm">Excellent Award, Freshman Scholarship of SUSTech, 2020</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover-lift transition-all duration-200">
-              <div className="text-3xl mb-4">🧠</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Mental Olympics</h4>
-              <p className="text-gray-600 text-sm">First Prize, Mental Olympics Challenge, 2018</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover-lift transition-all duration-200">
-              <div className="text-3xl mb-4">🔬</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Physics Competition</h4>
-              <p className="text-gray-600 text-sm">First Prize, Jiading District, Shanghai Physics Competition for Senior One Students, 2018</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover-lift transition-all duration-200">
-              <div className="text-3xl mb-4">📊</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Mathematics Competition</h4>
-              <p className="text-gray-600 text-sm">Third Prize, "Xinzhi" Cup Mathematical Competition for Middle School Students of Putuo District, 2017</p>
+          {/* Awards & Achievements */}
+          <div className="bg-gray-100 p-6">
+            <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">Awards & Achievements</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+                <div className="text-2xl">🏆</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Mathematical Modeling</h4>
+                  <p className="text-gray-600 text-xs">Third Prize, Guangdong Province, 2023</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+                <div className="text-2xl">💻</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Programming Contest</h4>
+                  <p className="text-gray-600 text-xs">Third Class Honor, SUSTech, 2022</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+                <div className="text-2xl">🎓</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Freshman Scholarship</h4>
+                  <p className="text-gray-600 text-xs">Excellent Award, SUSTech, 2020</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+                <div className="text-2xl">🧠</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Mental Olympics</h4>
+                  <p className="text-gray-600 text-xs">First Prize, 2018</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+                <div className="text-2xl">🔬</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Physics Competition</h4>
+                  <p className="text-gray-600 text-xs">First Prize, Jiading District, 2018</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+                <div className="text-2xl">📊</div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 text-sm">Mathematics Competition</h4>
+                  <p className="text-gray-600 text-xs">Third Prize, Putuo District, 2017</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
