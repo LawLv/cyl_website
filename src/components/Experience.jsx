@@ -9,7 +9,8 @@ const Experience = () => {
       organization: 'KTH Royal Institute of Technology',
       period: '2024 - Present',
       description: 'Currently pursuing MSc in Software Engineering of Distributed Systems with focus on Distributed Systems, Data Science, and AI/ML technologies. Current GPA: 4.3/5.',
-      skills: ['Distributed Systems', 'Data Science', 'Software Engineering', 'Machine Learning']
+      skills: ['Distributed Systems', 'Data Science', 'Software Engineering', 'Machine Learning'],
+      logo: '/images/KTH_logo.png'
     },
     {
       type: 'education',
@@ -17,7 +18,8 @@ const Experience = () => {
       organization: 'Southern University of Science and Technology (SUSTech)',
       period: '2020 - 2023',
       description: 'Major in Computer Science and Technology, Average Score: 82.28/100. Participated in multiple international summer programs and AI research projects.',
-      skills: ['Data Structures', 'Algorithms', 'Software Engineering', 'Artificial Intelligence']
+      skills: ['Data Structures', 'Algorithms', 'Software Engineering', 'Artificial Intelligence'],
+      logo: '/images/SUSTech_logo.png'
     },
     {
       type: 'education',
@@ -25,7 +27,8 @@ const Experience = () => {
       organization: 'National University of Singapore',
       period: 'July 2023',
       description: 'Focused on cloud computing and AWS services, including intelligent chatbots and big data analysis. Participated in team project to design, develop and deploy functional website on cloud platform.',
-      skills: ['AWS', 'Cloud Computing', 'Big Data', 'Intelligent Chatbots']
+      skills: ['AWS', 'Cloud Computing', 'Big Data', 'Intelligent Chatbots'],
+      logo: '/images/NUS_logo.png'
     },
     {
       type: 'education',
@@ -33,7 +36,8 @@ const Experience = () => {
       organization: 'Imperial College London',
       period: 'August 2022',
       description: 'Online summer school in Data Science, Grade: 86%, A-Distinction. Attended lectures and seminars on AI, Machine Learning, Neural Networks and Deep Learning. Completed two AI projects on Computer Vision and Natural Language Processing.',
-      skills: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing']
+      skills: ['Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing'],
+      logo: '/images/IC_logo.png'
     },
     {
       type: 'education',
@@ -41,7 +45,8 @@ const Experience = () => {
       organization: 'Georgia Tech Summer Program',
       period: 'July 2022',
       description: 'Atlanta Summer Program focusing on sustainability education.',
-      skills: ['Sustainability', 'Cross-cultural Communication', 'Project Management']
+      skills: ['Sustainability', 'Cross-cultural Communication', 'Project Management'],
+      logo: '/images/GT_logo.png'
     },
     {
       type: 'project',
@@ -183,7 +188,18 @@ const Experience = () => {
             <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300`}>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center space-x-3">
-                  {getTypeIcon(exp.type)}
+                  {/* University Logo */}
+                  {exp.logo && (
+                    <div className="flex-shrink-0 w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-200 flex items-center justify-center">
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.organization} logo`}
+                        className="w-8 h-8 object-contain"
+                      />
+                    </div>
+                  )}
+                  {/* Fallback to type icon if no logo */}
+                  {!exp.logo && getTypeIcon(exp.type)}
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">{exp.title}</h3>
                     <p className="text-cyan-600 font-medium text-sm">{exp.organization}</p>
