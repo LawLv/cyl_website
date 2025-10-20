@@ -24,31 +24,31 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
+              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg opacity-100"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
+              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg opacity-100"
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
+              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg opacity-100"
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('gallery')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
+              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg opacity-100"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
+              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg opacity-100"
             >
               Contact
             </button>

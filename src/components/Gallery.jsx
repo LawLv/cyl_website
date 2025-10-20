@@ -55,8 +55,20 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-16 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="gallery" 
+      className="py-16 relative"
+      style={{
+        backgroundImage: 'url(/images/albi-background.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-gray-800/70"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
           className={`text-center mb-16 transition-all duration-1000 ${
@@ -65,8 +77,8 @@ const Gallery = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Travel & Life</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Travel & Life</h2>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             Capturing moments from my journeys across different countries and cultures. 
             From mountain peaks to city streets, each experience shapes my perspective.
           </p>
@@ -77,7 +89,7 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group relative overflow-hidden rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm"
             >
               <div className="aspect-square overflow-hidden">
                 <img
