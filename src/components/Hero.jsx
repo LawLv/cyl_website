@@ -20,8 +20,8 @@ const Hero = () => {
           {/* Main Hero Text - Large and Bold */}
           <div className="mb-16">
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight">
-              The only fairness is<br />
-              <span className="text-cyan-400">NOT Fairness</span>
+              Truth is a<br />
+              <span className="text-cyan-400">variable.</span>
             </h1>
             <h2 className="text-2xl sm:text-3xl text-white font-light">
               enjoy CREATE & SHARE
