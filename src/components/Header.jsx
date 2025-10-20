@@ -24,36 +24,36 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-              style={{ color: 'white' }}
+              className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+              style={{ color: '#1f2937' }}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-              style={{ color: 'white' }}
+              className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+              style={{ color: '#1f2937' }}
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-              style={{ color: 'white' }}
+              className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+              style={{ color: '#1f2937' }}
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection('gallery')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-              style={{ color: 'white' }}
+              className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+              style={{ color: '#1f2937' }}
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-              style={{ color: 'white' }}
+              className="text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+              style={{ color: '#1f2937' }}
             >
               Contact
             </button>
@@ -82,36 +82,36 @@ const Header = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-800 border-t border-gray-700">
               <button
                 onClick={() => scrollToSection('about')}
-                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-                style={{ color: 'white' }}
+                className="block px-3 py-2 text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+                style={{ color: '#1f2937' }}
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection('experience')}
-                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-                style={{ color: 'white' }}
+                className="block px-3 py-2 text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+                style={{ color: '#1f2937' }}
               >
                 Experience
               </button>
               <button
                 onClick={() => scrollToSection('skills')}
-                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-                style={{ color: 'white' }}
+                className="block px-3 py-2 text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+                style={{ color: '#1f2937' }}
               >
                 Skills
               </button>
               <button
                 onClick={() => scrollToSection('gallery')}
-                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-                style={{ color: 'white' }}
+                className="block px-3 py-2 text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+                style={{ color: '#1f2937' }}
               >
                 Gallery
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200 font-medium text-lg"
-                style={{ color: 'white' }}
+                className="block px-3 py-2 text-gray-800 hover:text-cyan-600 transition-colors duration-200 font-medium text-lg"
+                style={{ color: '#1f2937' }}
               >
                 Contact
               </button>
