@@ -1,0 +1,116 @@
+import useScrollAnimation from '../hooks/useScrollAnimation';
+
+const Gallery = () => {
+  const [ref, isVisible] = useScrollAnimation();
+  
+  const galleryImages = [
+    {
+      src: "/images/travel1.jpg",
+      alt: "Mountain hiking adventure",
+      title: "Mountain Adventure",
+      description: "Exploring breathtaking mountain landscapes"
+    },
+    {
+      src: "/images/travel2.jpg", 
+      alt: "Stargazing under the night sky",
+      title: "Night Sky",
+      description: "Contemplating under the stars"
+    },
+    {
+      src: "/images/travel3.jpg",
+      alt: "Coastal cliff exploration", 
+      title: "Coastal Views",
+      description: "Discovering dramatic coastal scenery"
+    },
+    {
+      src: "/images/travel4.jpg",
+      alt: "Lakeside reflection",
+      title: "Lakeside Serenity", 
+      description: "Peaceful moments by the water"
+    },
+    {
+      src: "/images/travel5.jpg",
+      alt: "Countryside road journey",
+      title: "Countryside Journey",
+      description: "Exploring rural landscapes"
+    },
+    {
+      src: "/images/travel6.jpg",
+      alt: "Canal city exploration",
+      title: "Canal City",
+      description: "Discovering historic waterways"
+    },
+    {
+      src: "/images/travel7.jpg",
+      alt: "Harbor waterfront",
+      title: "Harbor Views",
+      description: "Urban waterfront experiences"
+    },
+    {
+      src: "/images/travel8.jpg",
+      alt: "Eiffel Tower sunset",
+      title: "Paris Sunset",
+      description: "Iconic landmarks at golden hour"
+    }
+  ];
+
+  return (
+    <section id="gallery" className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div 
+          ref={ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">Travel & Life</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Capturing moments from my journeys across different countries and cultures. 
+            From mountain peaks to city streets, each experience shapes my perspective.
+          </p>
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {galleryImages.map((image, index) => (
+            <div 
+              key={index}
+              className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
+                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="font-semibold text-sm mb-1">{image.title}</h3>
+                  <p className="text-xs opacity-90">{image.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Call to action */}
+        <div className="text-center mt-16">
+          <p className="text-gray-600 mb-4">Want to see more of my adventures?</p>
+          <button
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200"
+          >
+            Let's Connect
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Gallery;
