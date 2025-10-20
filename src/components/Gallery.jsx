@@ -55,7 +55,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-16 bg-gray-50">
+    <section id="gallery" className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
@@ -65,8 +65,8 @@ const Gallery = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">Travel & Life</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Travel & Life</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Capturing moments from my journeys across different countries and cultures. 
             From mountain peaks to city streets, each experience shapes my perspective.
           </p>

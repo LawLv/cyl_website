@@ -161,7 +161,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-16 bg-white">
+    <section id="experience" className="py-16 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
@@ -171,8 +171,8 @@ const Experience = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">Experience & Projects</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Experience & Projects</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             My educational background, work experience, and project portfolio showcasing my growth in software development and AI/ML.
           </p>
         </div>
@@ -187,7 +187,7 @@ const Experience = () => {
                 {/* Timeline dot */}
                 <div className="absolute left-8 top-6 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg hidden md:block"></div>
 
-                <div className={`ml-0 md:ml-20 p-6 rounded-lg border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg hover-lift transition-all duration-300`}>
+                <div className={`ml-0 md:ml-20 p-8 bg-white border-l-8 ${getTypeColor(exp.type)} hover:shadow-xl transition-all duration-300`}>
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
                       {getTypeIcon(exp.type)}

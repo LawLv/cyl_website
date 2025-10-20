@@ -87,8 +87,8 @@ const Contact = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">Contact Me</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Contact Me</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Have a project collaboration or job opportunity? I'd love to connect with you!
           </p>
         </div>

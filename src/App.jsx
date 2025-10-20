@@ -7,7 +7,7 @@ import Contact from './components/Contact'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-100">
       <Header />
       <main>
         <Hero />
@@ -18,9 +18,9 @@ function App() {
       </main>
       
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="bg-gray-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">
+          <p className="text-gray-300 text-lg">
             © 2024 Yilai Chen. Built with React + Tailwind CSS.
           </p>
         </div>

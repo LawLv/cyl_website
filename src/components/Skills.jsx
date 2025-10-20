@@ -57,7 +57,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-16 bg-gray-50">
+    <section id="skills" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
@@ -67,8 +67,8 @@ const Skills = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 hover:scale-105 transition-transform duration-300 cursor-pointer">Skills & Expertise</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Skills & Expertise</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Extensive experience across multiple technical domains, from frontend to backend, development to deployment.
           </p>
         </div>
@@ -76,8 +76,8 @@ const Skills = () => {
         {/* Skill Categories */}
         <div className="space-y-12 mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white rounded-lg shadow-md p-6 hover-lift">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">{category.title}</h3>
+            <div key={categoryIndex} className="bg-gray-100 p-8">
+              <h3 className="text-2xl font-bold text-cyan-500 mb-8 text-center">{category.title}</h3>
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="group">
