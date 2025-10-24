@@ -107,7 +107,7 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <div 
               key={index}
-              className="cursor-target group relative overflow-hidden rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm"
+              className="group relative overflow-hidden rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm"
             >
               <div className="aspect-square overflow-hidden">
                 <img
@@ -133,7 +133,7 @@ const Gallery = () => {
           <p className="text-gray-600 mb-4">Want to see more of my adventures?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="cursor-target bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200"
+            className="bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200"
           >
             Let's Connect
           </button>

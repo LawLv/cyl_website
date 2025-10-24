@@ -102,7 +102,7 @@ const Hero = () => {
           {/* Three Column Content Blocks */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Sharing Block */}
-            <div className="cursor-target bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
+            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
               <SplitTextComponent
                 text="Sharing"
                 className="text-2xl font-bold text-cyan-400 mb-4"
@@ -125,7 +125,7 @@ const Hero = () => {
             </div>
 
             {/* Creation Block */}
-            <div className="cursor-target bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
+            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
               <SplitTextComponent
                 text="Creation"
                 className="text-2xl font-bold text-cyan-400 mb-4"
@@ -148,7 +148,7 @@ const Hero = () => {
             </div>
 
             {/* Imagine Block */}
-            <div className="cursor-target bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
+            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
               <SplitTextComponent
                 text="Imagine"
                 className="text-2xl font-bold text-cyan-400 mb-4"
@@ -172,14 +172,14 @@ const Hero = () => {
           </div>
 
           {/* Social Media Section */}
-          <div className="cursor-target bg-gray-800 bg-opacity-80 backdrop-blur-sm py-8 mt-8 border border-gray-700 rounded-lg">
+          <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm py-8 mt-8 border border-gray-700 rounded-lg">
             <p className="text-white text-xl text-center">
               @yilai: GitHub、LinkedIn、Email
             </p>
           </div>
 
           {/* Bottom Content Block */}
-          <div className="cursor-target bg-gray-800 bg-opacity-80 backdrop-blur-sm p-12 mt-8 border border-gray-700">
+          <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-12 mt-8 border border-gray-700">
             <SplitTextComponent
               text="一个技术控。"
               className="text-3xl font-bold text-white mb-6"
@@ -211,19 +211,19 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="cursor-target bg-cyan-500 text-white px-8 py-4 text-lg font-medium hover:bg-cyan-600 transition-colors duration-200"
+                className="bg-cyan-500 text-white px-8 py-4 text-lg font-medium hover:bg-cyan-600 transition-colors duration-200"
               >
                 Contact Me
               </button>
               <button
                 onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="cursor-target border-2 border-cyan-400 text-cyan-400 px-8 py-4 text-lg font-medium hover:bg-cyan-400 hover:text-white transition-all duration-200"
+                className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 text-lg font-medium hover:bg-cyan-400 hover:text-white transition-all duration-200"
               >
                 View Experience
               </button>
               <button
                 onClick={() => window.location.href = '/game'}
-                className="cursor-target bg-green-500 text-white px-8 py-4 text-lg font-medium hover:bg-green-600 transition-colors duration-200"
+                className="bg-green-500 text-white px-8 py-4 text-lg font-medium hover:bg-green-600 transition-colors duration-200"
               >
                 🎮 小游戏
               </button>

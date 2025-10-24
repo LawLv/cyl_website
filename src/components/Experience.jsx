@@ -204,7 +204,7 @@ const Experience = () => {
         {/* Compact Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((exp, index) => (
-            <div key={index} className={`cursor-target p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300`}>
+            <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300`}>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   {/* University Logo */}
@@ -269,7 +269,7 @@ const Experience = () => {
           <p className="text-gray-600 mb-4">Want to know more?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="cursor-target bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
           >
             Contact me for full resume
           </button>
