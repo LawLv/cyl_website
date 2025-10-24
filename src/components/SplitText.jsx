@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { SplitText } from 'gsap/SplitText';
 
-// 注册GSAP插件
-gsap.registerPlugin(SplitText);
+// 动态导入SplitText插件
+const loadSplitText = async () => {
+  const { SplitText } = await import('gsap/SplitText');
+  gsap.registerPlugin(SplitText);
+  return SplitText;
+};
 
 const SplitTextComponent = ({
   text,
@@ -27,42 +30,58 @@ const SplitTextComponent = ({
 
     const element = textRef.current;
     
-    // 创建SplitText实例
-    const splitText = new SplitText(element, {
-      type: splitType,
-      charsClass: "char",
-      wordsClass: "word",
-      linesClass: "line"
-    });
+    // 动态加载SplitText插件并创建动画
+    const initAnimation = async () => {
+      try {
+        const SplitText = await loadSplitText();
+        
+        // 创建SplitText实例
+        const splitText = new SplitText(element, {
+          type: splitType,
+          charsClass: "char",
+          wordsClass: "word",
+          linesClass: "line"
+        });
 
-    // 获取分割后的元素
-    const chars = splitText.chars || splitText.words || splitText.lines;
-    
-    if (!chars || chars.length === 0) return;
+        // 获取分割后的元素
+        const chars = splitText.chars || splitText.words || splitText.lines;
+        
+        if (!chars || chars.length === 0) return;
 
-    // 设置初始状态
-    gsap.set(chars, from);
+        // 设置初始状态
+        gsap.set(chars, from);
 
-    // 创建时间轴动画
-    const tl = gsap.timeline({
-      delay: delay / 1000, // 转换毫秒为秒
-      onComplete: onLetterAnimationComplete
-    });
+        // 创建时间轴动画
+        const tl = gsap.timeline({
+          delay: delay / 1000, // 转换毫秒为秒
+          onComplete: onLetterAnimationComplete
+        });
 
-    // 添加动画
-    tl.to(chars, {
-      ...to,
-      duration: duration,
-      ease: ease,
-      stagger: 0.14 // 每个字符之间的延迟 (140ms)
-    });
+        // 添加动画
+        tl.to(chars, {
+          ...to,
+          duration: duration,
+          ease: ease,
+          stagger: 0.14 // 每个字符之间的延迟 (140ms)
+        });
 
-    // 清理函数
-    return () => {
-      if (splitText) {
-        splitText.revert();
+        // 清理函数
+        return () => {
+          if (splitText) {
+            splitText.revert();
+          }
+        };
+      } catch (error) {
+        console.error('Error loading SplitText:', error);
+        // 如果SplitText加载失败，使用简单的淡入动画作为后备
+        gsap.fromTo(element, 
+          { opacity: 0, y: 30 }, 
+          { opacity: 1, y: 0, duration: duration, delay: delay / 1000 }
+        );
       }
     };
+
+    initAnimation();
   }, [text, delay, duration, ease, splitType, from, to, onLetterAnimationComplete]);
 
   return (

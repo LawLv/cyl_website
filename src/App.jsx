@@ -7,11 +7,16 @@ import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Game from './components/Game'
 import AnimatedBackground from './components/AnimatedBackground'
+import TargetCursor from './components/TargetCursor'
 
 function HomePage() {
   return (
     <div className="relative min-h-screen">
       <AnimatedBackground />
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
       <div className="relative z-10">
         <Header />
         <main>

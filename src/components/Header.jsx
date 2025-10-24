@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FuzzyText from './FuzzyText';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,16 @@ const Header = () => {
         <div className="flex justify-between items-center py-6">
           {/* Logo/Name */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-white">YILAI CHEN</h1>
+            <FuzzyText 
+              fontSize="1.5rem"
+              fontWeight={700}
+              color="#fff"
+              baseIntensity={0.1} 
+              hoverIntensity={0.5} 
+              enableHover={true}
+            >
+              YILAI CHEN
+            </FuzzyText>
           </div>
 
           {/* Desktop Navigation */}

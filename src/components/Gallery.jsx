@@ -1,5 +1,5 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import SplitTextComponent from './SplitText';
+import SplitTextComponent from './SimpleSplitText';
 
 const Gallery = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -81,7 +81,7 @@ const Gallery = () => {
           <SplitTextComponent
             text="Travel & Life"
             className="text-4xl sm:text-5xl font-bold text-white mb-6"
-            delay={900}
+            delay={700}
             duration={0.8}
             ease="power3.out"
             splitType="words"
@@ -89,10 +89,17 @@ const Gallery = () => {
             to={{ opacity: 1, y: 0 }}
             textAlign="center"
           />
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Capturing moments from my journeys across different countries and cultures. 
-            From mountain peaks to city streets, each experience shapes my perspective.
-          </p>
+          <SplitTextComponent
+            text="Capturing moments from my journeys across different countries and cultures. From mountain peaks to city streets, each experience shapes my perspective."
+            className="text-xl text-gray-200 max-w-3xl mx-auto"
+            delay={1200}
+            duration={0.6}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            textAlign="center"
+          />
         </div>
 
         {/* Gallery Grid */}
@@ -100,7 +107,7 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm"
+              className="cursor-target group relative overflow-hidden rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm"
             >
               <div className="aspect-square overflow-hidden">
                 <img
@@ -126,7 +133,7 @@ const Gallery = () => {
           <p className="text-gray-600 mb-4">Want to see more of my adventures?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200"
+            className="cursor-target bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200"
           >
             Let's Connect
           </button>

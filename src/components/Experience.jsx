@@ -1,5 +1,5 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import SplitTextComponent from './SplitText';
+import SplitTextComponent from './SimpleSplitText';
 
 const Experience = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -180,7 +180,7 @@ const Experience = () => {
           <SplitTextComponent
             text="Experience & Projects"
             className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6"
-            delay={500}
+            delay={300}
             duration={0.8}
             ease="power3.out"
             splitType="words"
@@ -188,15 +188,23 @@ const Experience = () => {
             to={{ opacity: 1, y: 0 }}
             textAlign="center"
           />
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            My educational background, work experience, and project portfolio showcasing my growth in software development and AI/ML.
-          </p>
+          <SplitTextComponent
+            text="My educational background, work experience, and project portfolio showcasing my growth in software development and AI/ML."
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            delay={800}
+            duration={0.6}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            textAlign="center"
+          />
         </div>
 
         {/* Compact Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((exp, index) => (
-            <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300`}>
+            <div key={index} className={`cursor-target p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300`}>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   {/* University Logo */}
@@ -261,7 +269,7 @@ const Experience = () => {
           <p className="text-gray-600 mb-4">Want to know more?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+            className="cursor-target bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
           >
             Contact me for full resume
           </button>
