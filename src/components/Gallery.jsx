@@ -1,4 +1,5 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import SplitTextComponent from './SplitText';
 
 const Gallery = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -77,7 +78,17 @@ const Gallery = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">Travel & Life</h2>
+          <SplitTextComponent
+            text="Travel & Life"
+            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            delay={900}
+            duration={0.8}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 50 }}
+            to={{ opacity: 1, y: 0 }}
+            textAlign="center"
+          />
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             Capturing moments from my journeys across different countries and cultures. 
             From mountain peaks to city streets, each experience shapes my perspective.

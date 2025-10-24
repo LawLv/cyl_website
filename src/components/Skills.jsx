@@ -1,4 +1,5 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import SplitTextComponent from './SplitText';
 
 const Skills = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -67,7 +68,17 @@ const Skills = () => {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Skills & Expertise</h2>
+          <SplitTextComponent
+            text="Skills & Expertise"
+            className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6"
+            delay={700}
+            duration={0.8}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 50 }}
+            to={{ opacity: 1, y: 0 }}
+            textAlign="center"
+          />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Extensive experience across multiple technical domains, from frontend to backend, development to deployment.
           </p>
