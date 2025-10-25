@@ -99,7 +99,7 @@ const Skills = () => {
               <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">{category.title}</h3>
               <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="group">
+                  <div key={skillIndex} className="group cursor-target">
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-sm font-medium text-gray-700">{skill.name}</span>
                       <span className="text-xs text-gray-500">{skill.level}%</span>
@@ -126,7 +126,7 @@ const Skills = () => {
               {additionalSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="flex items-center p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-pointer group"
+                  className="flex items-center p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-pointer group cursor-target"
                 >
                   <div className="text-xl mr-3 group-hover:scale-110 transition-transform duration-200">
                     {skill.icon}
@@ -141,42 +141,42 @@ const Skills = () => {
           <div className="bg-gray-100 p-6">
             <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">Awards & Achievements</h3>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">
                 <div className="text-2xl">🏆</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Mathematical Modeling</h4>
                   <p className="text-gray-600 text-xs">Third Prize, Guangdong Province, 2023</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">
                 <div className="text-2xl">💻</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Programming Contest</h4>
                   <p className="text-gray-600 text-xs">Third Class Honor, SUSTech, 2022</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">
                 <div className="text-2xl">🎓</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Freshman Scholarship</h4>
                   <p className="text-gray-600 text-xs">Excellent Award, SUSTech, 2020</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">
                 <div className="text-2xl">🧠</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Mental Olympics</h4>
                   <p className="text-gray-600 text-xs">First Prize, 2018</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">
                 <div className="text-2xl">🔬</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Physics Competition</h4>
                   <p className="text-gray-600 text-xs">First Prize, Jiading District, 2018</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200">
+              <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">
                 <div className="text-2xl">📊</div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">Mathematics Competition</h4>

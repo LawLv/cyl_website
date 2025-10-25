@@ -204,7 +204,7 @@ const Experience = () => {
         {/* Compact Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((exp, index) => (
-            <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300`}>
+            <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300 cursor-target`}>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   {/* University Logo */}

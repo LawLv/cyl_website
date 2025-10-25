@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import Game from './components/Game'
 import AnimatedBackground from './components/AnimatedBackground'
 import StaggeredMenu from './components/StaggeredMenu'
+import TargetCursor from './components/TargetCursor'
 
 function HomePage() {
   const menuItems = [
@@ -28,8 +29,14 @@ function HomePage() {
     <div className="relative min-h-screen">
       <AnimatedBackground />
       
+      {/* Target Cursor */}
+      <TargetCursor 
+        spinDuration={10}
+        hideDefaultCursor={true}
+      />
+      
       {/* StaggeredMenu */}
-      <div className="fixed top-0 left-0 w-full h-full z-50">
+      <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-none">
         <StaggeredMenu
           position="right"
           items={menuItems}
