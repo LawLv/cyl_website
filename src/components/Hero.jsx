@@ -2,6 +2,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 import SplitTextComponent from './SplitText';
 import TextType from './TextType';
 import LogoLoop from './LogoLoop';
+import StarBorder from './StarBorder';
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -173,9 +174,33 @@ const Hero = () => {
 
           {/* Social Media Section */}
           <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm py-8 mt-8 border border-gray-700 rounded-lg">
-            <p className="text-white text-xl text-center">
-              @yilai: GitHub、LinkedIn、Email
+            <p className="text-white text-xl text-center mb-4">
+              Let's Connect
             </p>
+            <div className="flex justify-center space-x-8">
+              <a
+                href="https://github.com/LawLv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/yilai-chen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="mailto:chenyilai2022@gmail.com"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+              >
+                Email
+              </a>
+            </div>
           </div>
 
           {/* Bottom Content Block */}
@@ -209,24 +234,36 @@ const Hero = () => {
               delay={3200}
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <button
+              <StarBorder
+                as="button"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-cyan-500 text-white px-8 py-4 text-lg font-medium hover:bg-cyan-600 transition-colors duration-200"
+                color="magenta"
+                speed="2s"
+                thickness={1}
+                className="cursor-pointer"
               >
                 Contact Me
-              </button>
-              <button
+              </StarBorder>
+              <StarBorder
+                as="button"
                 onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 text-lg font-medium hover:bg-cyan-400 hover:text-white transition-all duration-200"
+                color="magenta"
+                speed="2s"
+                thickness={1}
+                className="cursor-pointer"
               >
                 View Experience
-              </button>
-              <button
+              </StarBorder>
+              <StarBorder
+                as="button"
                 onClick={() => window.location.href = '/game'}
-                className="bg-green-500 text-white px-8 py-4 text-lg font-medium hover:bg-green-600 transition-colors duration-200"
+                color="magenta"
+                speed="2s"
+                thickness={1}
+                className="cursor-pointer"
               >
                 🎮 小游戏
-              </button>
+              </StarBorder>
             </div>
           </div>
         </div>

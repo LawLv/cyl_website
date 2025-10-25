@@ -1,55 +1,73 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import SplitTextComponent from './SimpleSplitText';
+import Masonry from './Masonry';
+import StarBorder from './StarBorder';
 
 const Gallery = () => {
   const [ref, isVisible] = useScrollAnimation();
   
   const galleryImages = [
     {
-      src: "/images/travel1.jpg",
-      alt: "Mountain hiking adventure",
+      id: "1",
+      img: "/images/travel1.jpg",
+      url: "#",
+      height: 400,
       title: "Mountain Adventure",
       description: "Exploring breathtaking mountain landscapes"
     },
     {
-      src: "/images/travel2.jpg", 
-      alt: "Stargazing under the night sky",
+      id: "2", 
+      img: "/images/travel2.jpg",
+      url: "#",
+      height: 300,
       title: "Night Sky",
       description: "Contemplating under the stars"
     },
     {
-      src: "/images/travel3.jpg",
-      alt: "Coastal cliff exploration", 
+      id: "3",
+      img: "/images/travel3.jpg",
+      url: "#",
+      height: 500,
       title: "Coastal Views",
       description: "Discovering dramatic coastal scenery"
     },
     {
-      src: "/images/travel4.jpg",
-      alt: "Lakeside reflection",
+      id: "4",
+      img: "/images/travel4.jpg",
+      url: "#",
+      height: 350,
       title: "Lakeside Serenity", 
       description: "Peaceful moments by the water"
     },
     {
-      src: "/images/travel5.jpg",
-      alt: "Countryside road journey",
+      id: "5",
+      img: "/images/travel5.jpg",
+      url: "#",
+      height: 450,
       title: "Countryside Journey",
       description: "Exploring rural landscapes"
     },
     {
-      src: "/images/travel6.jpg",
-      alt: "Canal city exploration",
+      id: "6",
+      img: "/images/travel6.jpg",
+      url: "#",
+      height: 320,
       title: "Canal City",
       description: "Discovering historic waterways"
     },
     {
-      src: "/images/travel7.jpg",
-      alt: "Harbor waterfront",
+      id: "7",
+      img: "/images/travel7.jpg",
+      url: "#",
+      height: 380,
       title: "Harbor Views",
       description: "Urban waterfront experiences"
     },
     {
-      src: "/images/travel8.jpg",
-      alt: "Eiffel Tower sunset",
+      id: "8",
+      img: "/images/travel8.jpg",
+      url: "#",
+      height: 420,
       title: "Paris Sunset",
       description: "Iconic landmarks at golden hour"
     }
@@ -102,41 +120,36 @@ const Gallery = () => {
           />
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {galleryImages.map((image, index) => (
-            <div 
-              key={index}
-              className="group relative overflow-hidden rounded-lg shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-sm"
-            >
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
-                <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="font-semibold text-sm mb-1">{image.title}</h3>
-                  <p className="text-xs opacity-90">{image.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Masonry Gallery */}
+        <div className="min-h-[800px]">
+          {isVisible && (
+            <Masonry
+              items={galleryImages}
+              ease="power3.out"
+              duration={0.6}
+              stagger={0.05}
+              animateFrom="bottom"
+              scaleOnHover={true}
+              hoverScale={0.95}
+              blurToFocus={true}
+              colorShiftOnHover={false}
+            />
+          )}
         </div>
 
         {/* Call to action */}
         <div className="text-center mt-16">
           <p className="text-gray-600 mb-4">Want to see more of my adventures?</p>
-          <button
+          <StarBorder
+            as="button"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gray-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200"
+            color="magenta"
+            speed="2s"
+            thickness={1}
+            className="cursor-pointer"
           >
             Let's Connect
-          </button>
+          </StarBorder>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import SplitTextComponent from './SimpleSplitText';
+import StarBorder from './StarBorder';
 
 const Experience = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -267,12 +268,16 @@ const Experience = () => {
         {/* Call to action */}
         <div className="text-center mt-16">
           <p className="text-gray-600 mb-4">Want to know more?</p>
-          <button
+          <StarBorder
+            as="button"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+            color="magenta"
+            speed="2s"
+            thickness={1}
+            className="cursor-pointer"
           >
             Contact me for full resume
-          </button>
+          </StarBorder>
         </div>
       </div>
     </section>

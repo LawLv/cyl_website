@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import SplitTextComponent from './SimpleSplitText';
+import StarBorder from './StarBorder';
 
 const Contact = () => {
   const [ref, isVisible] = useScrollAnimation();
@@ -255,13 +256,17 @@ const Contact = () => {
                   placeholder="Please describe your project or question..."
                 />
               </div>
-              <button
+              <StarBorder
+                as="button"
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                color="magenta"
+                speed="2s"
+                thickness={1}
+                className="w-full cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
+              </StarBorder>
             </form>
           </div>
         </div>
