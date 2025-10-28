@@ -70,7 +70,7 @@ const Hero = () => {
             />
             <SplitTextComponent
               text="variable."
-              className="text-6xl sm:text-7xl lg:text-8xl font-bold text-cyan-400 mb-8 leading-tight-width"
+              className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight-width"
               delay={800}
               duration={0.8}
               ease="power3.out"
@@ -79,12 +79,12 @@ const Hero = () => {
               to={{ opacity: 1, y: 0, rotationX: 0 }}
               textAlign="center"
             />
-            <div className="text-2xl sm:text-3xl text-white font-light text-center mb-8">
+            <div className="text-2xl sm:text-3xl font-light text-center mb-8" style={{ color: 'var(--color-light)' }}>
               enjoy CREATE & SHARE
             </div>
             
             {/* 技术Logo轮播 */}
-            <div className="mb-16" style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
+            <div className="mb-16 logoloop-theme" style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
               <LogoLoop
                 logos={techLogos}
                 speed={120}
@@ -95,18 +95,19 @@ const Hero = () => {
                 scaleOnHover
                 fadeOut
                 fadeOutColor="transparent"
+                style={{ color: 'var(--color-primary)' }}
                 ariaLabel="Technology partners"
               />
             </div>
           </div>
 
-          {/* Three Column Content Blocks */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* Three Column Content Blocks */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Sharing Block */}
-            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
+            <div className="p-8 rounded-lg" style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-muted)' }}>
               <SplitTextComponent
                 text="Sharing"
-                className="text-2xl font-bold text-cyan-400 mb-4"
+                className="text-2xl font-bold mb-4"
                 delay={1800}
                 duration={0.6}
                 ease="power3.out"
@@ -126,10 +127,10 @@ const Hero = () => {
             </div>
 
             {/* Creation Block */}
-            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
+            <div className="p-8 rounded-lg" style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-muted)' }}>
               <SplitTextComponent
                 text="Creation"
-                className="text-2xl font-bold text-cyan-400 mb-4"
+                className="text-2xl font-bold mb-4"
                 delay={2000}
                 duration={0.6}
                 ease="power3.out"
@@ -149,10 +150,10 @@ const Hero = () => {
             </div>
 
             {/* Imagine Block */}
-            <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 border border-gray-700">
+            <div className="p-8 rounded-lg" style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-muted)' }}>
               <SplitTextComponent
                 text="Imagine"
-                className="text-2xl font-bold text-cyan-400 mb-4"
+                className="text-2xl font-bold mb-4"
                 delay={2200}
                 duration={0.6}
                 ease="power3.out"
@@ -172,100 +173,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Social Media Section */}
-          <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm py-8 mt-8 border border-gray-700 rounded-lg">
-            <p className="text-white text-xl text-center mb-4">
-              Let's Connect
-            </p>
-            <div className="flex justify-center space-x-8">
-              <a
-                href="https://github.com/LawLv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/yilai-chen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="mailto:chenyilai2022@gmail.com"
-                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-              >
-                Email
-              </a>
-            </div>
-          </div>
+          {/* Social Media Section - removed per request */}
 
-          {/* Bottom Content Block */}
-          <div className="bg-gray-800 bg-opacity-80 backdrop-blur-sm p-12 mt-8 border border-gray-700">
-            <SplitTextComponent
-              text="一个技术控。"
-              className="text-3xl font-bold text-white mb-6"
-              delay={2400}
-              duration={0.8}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-            />
-            <TextType
-              text={["专注于分布式系统、数据科学和人工智能领域的研究与开发。在KTH皇家理工学院攻读软件工程硕士学位，致力于将机器学习技术应用于解决现实世界的问题。"]}
-              typingSpeed={30}
-              pauseDuration={1500}
-              showCursor={true}
-              cursorCharacter="_"
-              className="text-lg text-gray-200 leading-relaxed mb-6"
-              delay={2800}
-            />
-            <TextType
-              text={["拥有丰富的Python、Java开发经验，参与过多个AI/ML项目，包括强化学习在金融投资组合管理中的应用、基于AWS的群组任务分配管理平台等。目前正在研究分布式SQL数据库和进化算法优化。"]}
-              typingSpeed={30}
-              pauseDuration={1500}
-              showCursor={true}
-              cursorCharacter="_"
-              className="text-lg text-gray-200 leading-relaxed mb-6"
-              delay={3200}
-            />
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <StarBorder
-                as="button"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                color="magenta"
-                speed="2s"
-                thickness={1}
-                className="cursor-pointer"
-              >
-                Contact Me
-              </StarBorder>
-              <StarBorder
-                as="button"
-                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                color="magenta"
-                speed="2s"
-                thickness={1}
-                className="cursor-pointer"
-              >
-                View Experience
-              </StarBorder>
-              <StarBorder
-                as="button"
-                onClick={() => window.location.href = '/game'}
-                color="magenta"
-                speed="2s"
-                thickness={1}
-                className="cursor-pointer"
-              >
-                🎮 小游戏
-              </StarBorder>
-            </div>
-          </div>
+          {/* Bottom Content Block removed; moved after MagicBento */}
         </div>
       </div>
     </section>

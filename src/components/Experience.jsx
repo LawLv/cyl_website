@@ -18,7 +18,7 @@ const Experience = () => {
       type: 'education',
       title: 'Bachelor of Engineering in Computer Science and Technology',
       organization: 'Southern University of Science and Technology (SUSTech)',
-      period: '2020 - 2023',
+      period: '2020 - 2024',
       description: 'Major in Computer Science and Technology, Average Score: 82.28/100. Participated in multiple international summer programs and AI research projects.',
       skills: ['Data Structures', 'Algorithms', 'Software Engineering', 'Artificial Intelligence'],
       logo: '/images/SUSTech_logo.png'
@@ -205,7 +205,7 @@ const Experience = () => {
         {/* Compact Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {experiences.map((exp, index) => (
-            <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300 cursor-target`}>
+            <div key={index} className={`p-6 bg-white border-l-4 ${getTypeColor(exp.type)} hover:shadow-lg transition-all duration-300 cursor-target rounded-lg`}>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center space-x-3">
                   {/* University Logo */}

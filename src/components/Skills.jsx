@@ -95,7 +95,7 @@ const Skills = () => {
         {/* Compact Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-gray-100 p-6">
+            <div key={categoryIndex} className="bg-gray-100 p-6 rounded-lg">
               <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">{category.title}</h3>
               <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
@@ -120,7 +120,7 @@ const Skills = () => {
         {/* Additional Skills & Awards Combined */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Additional Skills */}
-          <div className="bg-gray-100 p-6">
+          <div className="bg-gray-100 p-6 rounded-lg">
             <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">Additional Skills</h3>
             <div className="grid grid-cols-2 gap-3">
               {additionalSkills.map((skill, index) => (
@@ -138,7 +138,7 @@ const Skills = () => {
           </div>
 
           {/* Awards & Achievements */}
-          <div className="bg-gray-100 p-6">
+          <div className="bg-gray-100 p-6 rounded-lg">
             <h3 className="text-xl font-bold text-cyan-500 mb-6 text-center">Awards & Achievements</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3 p-3 bg-white rounded hover:shadow-md transition-all duration-200 cursor-target">

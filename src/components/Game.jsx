@@ -431,23 +431,23 @@ const Game = () => {
   }, [gameState, gameLoop]);
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(180deg, var(--color-dark) 0%, var(--color-surface) 100%)' }}>
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-white mb-8">躲避游戏</h1>
+        <h1 className="text-4xl font-bold mb-8" style={{ color: 'var(--color-primary)' }}>躲避游戏</h1>
         
         {gameState === 'menu' && (
           <div className="mb-8">
-            <p className="text-white text-lg mb-4">使用 WASD 键移动，躲避红色方块</p>
+            <p className="text-lg mb-4" style={{ color: 'var(--color-light)' }}>使用 WASD 键移动，躲避红色方块</p>
             
             <div className="mb-6">
-              <p className="text-white text-sm mb-3">选择难度：</p>
+              <p className="text-sm mb-3" style={{ color: 'var(--color-light)' }}>选择难度：</p>
               <div className="flex gap-4 justify-center">
                 <button
                   onClick={() => setDifficulty('easy')}
                   className={`px-4 py-2 rounded-lg transition-colors ${
                     difficulty === 'easy' 
-                      ? 'bg-green-500 text-white' 
-                      : 'bg-gray-600 text-white hover:bg-gray-500'
+                      ? 'bg-[var(--color-primary)] text-[var(--color-dark)]' 
+                      : 'bg-[color:var(--color-surface)] text-[var(--color-light)] hover:bg-[color:var(--color-dark)]'
                   }`}
                 >
                   简单
@@ -456,8 +456,8 @@ const Game = () => {
                   onClick={() => setDifficulty('medium')}
                   className={`px-4 py-2 rounded-lg transition-colors ${
                     difficulty === 'medium' 
-                      ? 'bg-yellow-500 text-white' 
-                      : 'bg-gray-600 text-white hover:bg-gray-500'
+                      ? 'bg-[var(--color-primary)] text-[var(--color-dark)]' 
+                      : 'bg-[color:var(--color-surface)] text-[var(--color-light)] hover:bg-[color:var(--color-dark)]'
                   }`}
                 >
                   中等
@@ -466,8 +466,8 @@ const Game = () => {
                   onClick={() => setDifficulty('hard')}
                   className={`px-4 py-2 rounded-lg transition-colors ${
                     difficulty === 'hard' 
-                      ? 'bg-red-500 text-white' 
-                      : 'bg-gray-600 text-white hover:bg-gray-500'
+                      ? 'bg-[var(--color-primary)] text-[var(--color-dark)]' 
+                      : 'bg-[color:var(--color-surface)] text-[var(--color-light)] hover:bg-[color:var(--color-dark)]'
                   }`}
                 >
                   困难
@@ -475,10 +475,11 @@ const Game = () => {
               </div>
             </div>
             
-            <p className="text-white mb-6">按空格键开始游戏</p>
+            <p className="mb-6" style={{ color: 'var(--color-light)' }}>按空格键开始游戏</p>
             <button
               onClick={startGame}
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+              className="font-bold py-3 px-8 rounded-lg transition-colors"
+              style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-dark)' }}
             >
               开始游戏
             </button>
@@ -487,24 +488,25 @@ const Game = () => {
         
         {gameState === 'playing' && (
           <div className="mb-4">
-            <div className="text-white text-2xl font-bold mb-4">
+            <div className="text-2xl font-bold mb-4" style={{ color: 'var(--color-primary)' }}>
               分数: {score}
             </div>
-            <p className="text-white text-sm">按空格键暂停</p>
+            <p className="text-sm" style={{ color: 'var(--color-light)' }}>按空格键暂停</p>
           </div>
         )}
         
         {gameState === 'gameOver' && (
           <div className="mb-8">
-            <div className="text-white text-3xl font-bold mb-4">
+            <div className="text-3xl font-bold mb-4" style={{ color: 'var(--color-primary)' }}>
               游戏结束！
             </div>
-            <div className="text-white text-xl mb-6">
+            <div className="text-xl mb-6" style={{ color: 'var(--color-light)' }}>
               最终分数: {Math.floor(finalScore)}
             </div>
             <button
               onClick={resetGame}
-              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors"
+              className="font-bold py-3 px-8 rounded-lg transition-colors"
+              style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-dark)' }}
             >
               重新开始
             </button>
@@ -515,15 +517,16 @@ const Game = () => {
           ref={canvasRef}
           width={MAP_WIDTH}
           height={MAP_HEIGHT}
-          className="border-2 border-white bg-black"
-          style={{ imageRendering: 'pixelated' }}
+          className="border-2"
+          style={{ borderColor: 'var(--color-muted)', backgroundColor: 'var(--color-dark)', imageRendering: 'pixelated' }}
         />
         
         
         <div className="mt-8">
           <button
             onClick={() => window.history.back()}
-            className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg transition-colors"
+            className="font-bold py-2 px-6 rounded-lg transition-colors"
+            style={{ backgroundColor: 'var(--color-surface)', color: 'var(--color-light)' }}
           >
             返回首页
           </button>

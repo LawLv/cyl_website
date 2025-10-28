@@ -3,18 +3,18 @@ import { gsap } from 'gsap';
 
 export const StaggeredMenu = ({
   position = 'right',
-  colors = ['#B19EEF', '#5227FF'],
+  colors = ['#3F4F44', '#2C3930'],
   items = [],
   socialItems = [],
   displaySocials = true,
   displayItemNumbering = true,
   className,
   logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
-  menuButtonColor = '#fff',
-  openMenuButtonColor = '#fff',
+  menuButtonColor = '#DCD7C9',
+  openMenuButtonColor = '#A27B5C',
   changeMenuColorOnOpen = true,
   isFixed = false,
-  accentColor = '#5227FF',
+  accentColor = '#A27B5C',
   onMenuOpen,
   onMenuClose
 }) => {
@@ -390,7 +390,7 @@ export const StaggeredMenu = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10"
+          className="staggered-menu-panel absolute top-0 right-0 h-full flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10"
           aria-hidden={!open}
           onMouseLeave={() => {
             if (open) {
@@ -408,7 +408,7 @@ export const StaggeredMenu = ({
                 items.map((it, idx) => (
                   <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
                     <a
-                      className="sm-panel-item relative text-black font-semibold text-[2.5rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[3em]"
+                      className="sm-panel-item relative font-semibold text-[2.5rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[3em]"
                       href={it.link}
                       aria-label={it.ariaLabel}
                       data-index={idx + 1}
@@ -427,7 +427,7 @@ export const StaggeredMenu = ({
                 ))
               ) : (
                 <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
-                  <span className="sm-panel-item relative text-black font-semibold text-[2.5rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[3em]">
+                  <span className="sm-panel-item relative font-semibold text-[2.5rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[3em]">
                     <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                       No items
                     </span>

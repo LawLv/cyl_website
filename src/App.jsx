@@ -1,15 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useCallback, useState } from 'react'
 import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
+import MagicBento from './components/MagicBento'
 import Game from './components/Game'
-import AnimatedBackground from './components/AnimatedBackground'
+// Removed AnimatedBackground per new palette
 import StaggeredMenu from './components/StaggeredMenu'
 import TargetCursor from './components/TargetCursor'
 
 function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '#' },
     { label: 'About', ariaLabel: 'Learn about me', link: '#about' },
@@ -25,9 +29,28 @@ function HomePage() {
     { label: 'Email', link: 'mailto:yilai.chen@example.com' }
   ];
 
+  const handleMenuClick = useCallback((e) => {
+    const anchor = e.target.closest('a[href^="#"]')
+    if (!anchor) return
+    const hash = anchor.getAttribute('href')
+    if (!hash || hash === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      setIsMenuOpen(false)
+      e.preventDefault()
+      return
+    }
+    const id = hash.slice(1)
+    const el = document.getElementById(id)
+    if (el) {
+      e.preventDefault()
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setIsMenuOpen(false)
+    }
+  }, [])
+
   return (
     <div className="relative min-h-screen">
-      <AnimatedBackground />
+      {/* New subtle background handled via global CSS gradient */}
       
       {/* Target Cursor */}
       <TargetCursor 
@@ -36,29 +59,58 @@ function HomePage() {
       />
       
       {/* StaggeredMenu */}
-      <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-none">
+      <div
+        className={`fixed top-0 left-0 w-full h-full z-50 ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        onClick={handleMenuClick}
+      >
         <StaggeredMenu
           position="right"
           items={menuItems}
           socialItems={socialItems}
           displaySocials={true}
           displayItemNumbering={false}
-          menuButtonColor="#fff"
-          openMenuButtonColor="#fff"
+          menuButtonColor={getComputedStyle(document.documentElement).getPropertyValue('--color-light') || '#DCD7C9'}
+          openMenuButtonColor={getComputedStyle(document.documentElement).getPropertyValue('--color-primary') || '#A27B5C'}
           changeMenuColorOnOpen={true}
-          colors={['#B19EEF', '#5227FF']}
-          accentColor="#ff6b6b"
-          onMenuOpen={() => console.log('Menu opened')}
-          onMenuClose={() => console.log('Menu closed')}
+          colors={[getComputedStyle(document.documentElement).getPropertyValue('--color-surface') || '#3F4F44', getComputedStyle(document.documentElement).getPropertyValue('--color-dark') || '#2C3930']}
+          accentColor={getComputedStyle(document.documentElement).getPropertyValue('--color-primary') || '#A27B5C'}
+          onMenuOpen={() => setIsMenuOpen(true)}
+          onMenuClose={() => setIsMenuOpen(false)}
         />
       </div>
       
       <div className="relative z-10">
         <main>
+          {/* 保留动态深色背景区：Hero */}
           <Hero />
-          <Experience />
-          <Skills />
-          <Gallery />
+
+          {/* Magic Bento 章节导航 */}
+          <section className="py-16">
+            <MagicBento
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={true}
+              clickEffect={true}
+              spotlightRadius={100}
+              particleCount={12}
+              glowColor="162, 123, 92"
+            />
+          </section>
+
+          {/* Bio text after MagicBento */}
+          <section className="py-10 px-4">
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">A Technophile.</h2>
+              <p className="text-lg text-gray-200 leading-relaxed">
+                Focused on distributed systems, data science, and AI/ML engineering. Pursuing an MSc in Software Engineering of Distributed Systems at KTH Royal Institute of Technology, applying machine learning to real-world problems. Experienced in Python and Java, with projects spanning reinforcement learning for portfolio management, an AWS-based group task platform, and ongoing work on distributed SQL databases and evolutionary optimization.
+              </p>
+            </div>
+          </section>
+
+          {/* 仅保留最终 ContactMe 章节 */}
           <Contact />
         </main>
         
@@ -76,11 +128,28 @@ function HomePage() {
 }
 
 function App() {
+  const ScrollToTop = () => {
+    const location = useLocation()
+    useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    }, [location.pathname])
+    return null
+  }
   return (
     <Router>
+      <ScrollToTop />
+      {/* Global floating name badge */}
+      <div className="fixed top-4 left-4 z-[10000]">
+        <Link to="/" className="font-bold tracking-wide" style={{ color: 'var(--color-light)' }}>
+          YILAI CHEN
+        </Link>
+      </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </Router>
   )

@@ -3,6 +3,51 @@
 @tailwind utilities;
 
 /* Hover effects and animations */
+
+/* Theme palette overrides */
+:root {
+  --color-primary: #A27B5C;   /* accent brown */
+  --color-muted: #3F4F44;     /* desaturated green */
+  --color-dark: #2C3930;      /* deep greenish */
+  --color-light: #DCD7C9;     /* sand light */
+  --color-surface: #3F4F44;   /* surface blocks */
+}
+
+body { color: var(--color-light); background: linear-gradient(180deg, #2C3930 0%, #3F4F44 100%); }
+
+a { color: var(--color-primary); }
+
+/* Override commonly used Tailwind utility colors to match theme */
+.bg-gray-800 { background-color: var(--color-dark) !important; }
+.border-gray-700 { border-color: var(--color-muted) !important; }
+.text-white, .text-gray-200 { color: var(--color-light) !important; }
+.text-cyan-400 { color: var(--color-primary) !important; }
+.border-cyan-400 { border-color: var(--color-primary) !important; }
+
+.bg-gray-100 { background-color: var(--color-light) !important; }
+.text-gray-900, .text-gray-800 { color: var(--color-dark) !important; }
+
+/* Buttons default focus ring recolor if used */
+.focus\:ring-blue-500:focus { --tw-ring-color: var(--color-accent1) !important; }
+.hover\:bg-blue-700:hover { background-color: var(--color-primary) !important; }
+
+/* Force theme color for scrolling logo component */
+.logoloop-theme, .logoloop-theme a, .logoloop-theme svg {
+  color: var(--color-primary) !important;
+}
+.logoloop-theme svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* Contact section theming */
+#contact [data-contact-hero] * { color: #000 !important; }
+#contact h3, #contact h4, #contact label { color: var(--color-primary) !important; }
+#contact p, #contact span { color: var(--color-light) !important; }
+#contact a { color: var(--color-primary) !important; }
+#contact .contact-card, #contact .group, #contact .rounded-lg { background-color: var(--color-surface) !important; border-color: var(--color-muted) !important; }
+#contact input, #contact textarea { background-color: var(--color-surface) !important; border: 1px solid var(--color-muted) !important; color: var(--color-light) !important; }
+#contact button[type="submit"] { background-color: var(--color-primary) !important; color: var(--color-dark) !important; border: none !important; }
 @layer utilities {
   .scroll-smooth {
     scroll-behavior: smooth;
