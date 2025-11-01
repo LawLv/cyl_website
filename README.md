@@ -1,12 +1,9 @@
 # cyl_website
 www.yilai.me
-> 一个使用 cursor 的测试小项目（实验性质），由 Yilai Chen（LawLv）创建。  
-> **注意：此项目尚未完成，主要目的是测试 cursor 交互效果，仅供参考／学习使用。**
+使用 cursor 的测试小项目（实验性质）。  
 
 ## 项目简介  
-该仓库演示了一个轻量的前端页面项目，基于 Vite、Tailwind CSS 构建。  
-项目目标为：探索／实验“cursor”相关的交互（例如指针特效、游标跟踪、滑动效果等），并在项目中快速搭建原型。  
-虽然尚未完成所有功能，但结构已搭建，技术栈已选定，欢迎参考或基于此继续开发。
+该仓库演示了一个轻量的前端页面项目，基于 Vite、Tailwind CSS 构建。 
 
 ## 技术栈  
 - **构建工具**：Vite  
@@ -34,12 +31,6 @@ www.yilai.me
 # 克隆仓库
 git clone https://github.com/LawLv/cyl_website.git
 cd cyl_website
-
-# 安装依赖
 npm install
-
-# 启动开发服务器
 npm run dev
-
-# 构建生产版本（实验性质）
 npm run build
